@@ -1,0 +1,23 @@
+
+
+.mainDiv{
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(75deg,  #16ffecd3 ,
+  #0883ff7c ,
+  #23abd44e ,
+  #052c6033);
+  
+  /*Animation for background on splash page's first section*/
+  animation: bg-gradient 5s ease-in infinite alternate;
+  background-size:150%;
+}
+
+@keyframes bg-gradient{
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
