@@ -1,8 +1,8 @@
 import { Banner, Bitmoji } from './styles'
 import React from 'react';
-import BITMOJI from './bitmoji-homepage.png';
-import bitmoji from './bitmoji-homepage.png'
-import GlobalStyle from './styles';
+import BITMOJI from '/images/Homepage-bitmoji.png';
+import GlobalStyle from './global-style';
+import Image from 'next'
 
 const bitmojiPath='/images/bitmoji-homepage.png';
 //{bitmojiPath,firstHeadingText,secondHeadingText}:LandingPageProps)=>

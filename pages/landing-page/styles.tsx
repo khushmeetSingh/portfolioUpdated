@@ -1,20 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { Keyframes } from 'styled-components'
 
-import { createGlobalStyle } from "styled-components"
-
- const GlobalStyle= createGlobalStyle`
-    *{
-        margin: 0;
-        padding: 0;
-        outline:0;
-        box-sizing:border-box;
-        font-family: 'Open Sans', sans-serif; 
-    }
-    #root{
-        margin:0 auto;
-    }
- `
 
 const bgGradient = keyframes`
 from {
@@ -39,7 +25,6 @@ background-size:150%;
 `
 
 export const Bitmoji=styled.img`
-right:10000px;
+margin-left:30px;
 `
 
-export default GlobalStyle;
