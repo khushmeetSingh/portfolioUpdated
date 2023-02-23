@@ -1,17 +1,20 @@
-import { Banner, Bitmoji } from './styles'
 import React from 'react';
+import { Banner, Bitmoji, NameHeading } from './styles'
 import BITMOJI from '/images/Homepage-bitmoji.png';
 import GlobalStyle from './global-style';
-import Image from 'next'
+import { Head } from 'next/document';
+import Script from 'next/script';
 
-const bitmojiPath='/images/bitmoji-homepage.png';
 //{bitmojiPath,firstHeadingText,secondHeadingText}:LandingPageProps)=>
 const LandingPage=function(){
     return<>
+    <Head>
+        {/* <Script src='./index.js' strategy='lazyOnload'></Script> */}
+    </Head>
    <GlobalStyle/>
     <Banner>
         <Bitmoji src={BITMOJI.src} height={"700px"} width={"auto"}/>
-        {/* <NameHeading></NameHeading> */}
+        <NameHeading>Khushmeet Singh</NameHeading>
     </Banner>
     </>
 }
