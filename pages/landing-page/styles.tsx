@@ -4,13 +4,14 @@
 import styled, { keyframes } from 'styled-components'
 import { Keyframes } from 'styled-components'
 
-const h1Size = '130px';
+const h1Size = '72px';
 const h2Size = '75px';
 const h3Size = '50px';
 const h4Size = '35px';
 const h5Size = '24px';
 const h6Size = '16px';
 const ParagraphSize = '12px';
+const BannerTextContent='KhushmeetSingh';
 
 //Animation for background for the image as well the text's color
 const bgGradient = keyframes`
@@ -57,31 +58,41 @@ display:flex;
 flex-direction:column; 
 `
 const TextFillAnimation=keyframes`
-from{
+0%{
   width:0;
 }
-to{
+50%{
   width:100%;
-  color:#fff;
+}
+100%{
+  width:0;
 }
 `
 
 //Component for the heading containing the name
+
+
+//Styled component for the text that will be written on the banner except for the name
+export const BannerText = styled.h3`
+font-size:${h3Size};
+color:#fff;
+display:inline;
+`
+
+export const AnimationDiv=styled.div`
+display:flex;
+flex-direction:row;
+`
+
 export const NameHeading = styled.h1`
   &{
-    color:#100f10;
-  font-size:${h1Size};
-  // display:inline;
-
-  -webkit-text-stroke:3.5px #fff;
-  // background: -webkit-linear-gradient(315deg,#C89D7C,#5f4531);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
-  // background-size:130%;
-  // animation: ${bgGradient} 7s ease-in infinite alternate-reverse;
-  position:relative;
+    font-size:${h1Size};
+    display:inline;
+    -webkit-text-stroke:1.5px #fff;
+    mix-blend-mode: color-dodge;position:relative;
+    margin-right:35px;
   }
-  &:before {
+  &: before {
     top: 0;
     left: 0;
     width: 0;
@@ -89,19 +100,15 @@ export const NameHeading = styled.h1`
     color: #fff;
     overflow: hidden;
     position: absolute;
-    content: "KhushmeetSingh";
+    content: attr(id);
     border-right : 2px solid #37b9f1;
     -webkit-text-stroke : 0vw #2ecc71;
-    animation: ${TextFillAnimation} 3s ;
+    animation: ${TextFillAnimation} 4s ease-in-out ;
     animation-iteration-count:1;
   }
 `
-
-
-//Styled component for the text that will be written on the banner except for the name
-export const BannerText = styled.h2`
-font-size:${h3Size};
+export const SmallerBannerText=styled.h4`
+font-size:${h4Size};
 color:#fff;
 display:inline;
-
 `
