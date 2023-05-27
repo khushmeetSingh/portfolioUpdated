@@ -82,7 +82,7 @@ const DrawerMenu = function () {
                 </InnerInformationContainer>
                 <InnerMenuContainer>
                     {drawerOptions.map((value:{ type: string; color: string; })=>{
-                        return <MenuOption color={value.color}>{value.type}</MenuOption>;}
+                        return <MenuOption color={value.color} key={`${value.type}-key`}>{value.type}</MenuOption>;}
                     )}
                 </InnerMenuContainer>
             </InnerDrawerMenuContainer>

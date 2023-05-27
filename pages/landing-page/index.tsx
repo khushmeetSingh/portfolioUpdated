@@ -1,9 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Banner, BannerText,SmallerBannerText, Bitmoji, NameHeading, TextDiv , AnimationDiv } from './styles'
+import Banner, { BannerText,SmallerBannerText, Bitmoji, NameHeading, TextDiv , AnimationDiv } from './styles'
 import BITMOJI from '/images/Homepage-bitmoji.png';
-import GlobalStyle from './global-style';
-import { Head } from 'next/document';
-import Script from 'next/script';
 
 const BannerMain = function () {
     const bitmojiElement = useRef(null);

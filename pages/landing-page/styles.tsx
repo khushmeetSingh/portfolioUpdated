@@ -24,7 +24,7 @@ const bgGradient = keyframes`
 `
 
 //Component for the Banner gradient
-export const Banner = styled.div`
+const Banner = styled.div`
   height: 100vh;
   width: 100vw;
   background: linear-gradient(75deg,  #16ffec ,
@@ -111,4 +111,6 @@ export const SmallerBannerText=styled.h4`
 font-size:${h4Size};
 color:#fff;
 display:inline;
-`
+`;
+
+export default Banner;
