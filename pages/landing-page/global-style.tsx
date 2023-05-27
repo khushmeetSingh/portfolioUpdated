@@ -7,6 +7,7 @@ import { createGlobalStyle } from "styled-components"
         outline:0;
         box-sizing:border-box;
         font-family: 'Open Sans', sans-serif; 
+        background-color: #192735;
     }
     #root{
         margin:0 auto;

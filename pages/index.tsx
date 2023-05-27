@@ -1,8 +1,12 @@
-import  LandingPage  from './landing-page'
+import BannerMain from './landing-page'
+import DrawerMenu from './landing-page/drawer-menu'
+import GlobalStyle from './landing-page/global-style'
 
 export default function Home() {
   return (<>
-    <LandingPage></LandingPage>
+  <GlobalStyle/>
+    {/* <BannerMain /> */}
+    <DrawerMenu></DrawerMenu>
     </>
   )
 }

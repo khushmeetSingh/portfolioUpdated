@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Banner, BannerText,SmallerBannerText, Bitmoji, NameHeading, TextDiv , AnimationDiv } from './styles'
 import BITMOJI from '/images/Homepage-bitmoji.png';
 import GlobalStyle from './global-style';
 import { Head } from 'next/document';
 import Script from 'next/script';
 
-const LandingPage = function () {
+const BannerMain = function () {
+    const bitmojiElement = useRef(null);
     return <>
-        <GlobalStyle />
+        {/* <GlobalStyle /> */}
         <Banner>
-            <Bitmoji src={BITMOJI.src} height={"700px"} width={"auto"} />
+            <Bitmoji src={BITMOJI.src} height={"700px"} width={"auto"} ref={bitmojiElement} />
             <TextDiv>
                 <BannerText>Hello, I am</BannerText>
                 <AnimationDiv>
                     <NameHeading id="Khushmeet">Khushmeet</NameHeading>
                     <NameHeading id="Singh">Singh</NameHeading>
                 </AnimationDiv>
-                <SmallerBannerText>:Student, Developer and Chess player</SmallerBannerText>
+                <SmallerBannerText>:Student, Developer </SmallerBannerText>
             </TextDiv>
+    {/* <Parallax blur={10} bgImage="path/to/image.jpg" bgImageAlt="the cat" strength={200}> */}
         </Banner>
         
     </>
 }
 
-export default LandingPage;
+export default BannerMain;
