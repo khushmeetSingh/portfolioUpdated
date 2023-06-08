@@ -54,15 +54,18 @@ function Information({ mode }: InformationProps) {
                 <Heading1 color="#f23269"><HeadingSpan color="#f23269">E</HeadingSpan>ducation</Heading1>
                 <List>
                     <ListItem>SGTB Khalsa</ListItem>
-                    <ListItemDescription>Bachelors of Sciences, Computer Science(Honours)</ListItemDescription>
+                    {/* <ListItemDescription>Bachelors of Sciences, Computer Science(Honours)</ListItemDescription>
                     <ListItemDescription>Skills:</ListItemDescription>
-                    <ListItemDescriptionFaded>C++, Java, JavaFX, HTML, CSS, Node JS, SQL, </ListItemDescriptionFaded>
+                    <ListItemDescriptionFaded>C++, Java, JavaFX, HTML, CSS, Node JS, SQL, </ListItemDescriptionFaded> */}
                 </List>
             </ContainerDiv>
         </>)
-    }
-    else{
-        return<></>;
+    }else if(mode === 'Skills'){
+        return <>Skills</>;
+    }else if(mode === 'Projects'){
+        return <>Projects</>;
+    }else{
+        return<>unexpected props passed</>;
     }
 }
 

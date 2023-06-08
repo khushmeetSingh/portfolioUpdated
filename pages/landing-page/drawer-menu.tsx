@@ -21,9 +21,10 @@ const InnerDrawerMenuContainer = styled.div`
     &{
     width: 900px;
     height: 500px;
-    border-radius: 25px;
+    border-radius: 0 25px 0 25px;
     // transform: skewY(5deg);
-    // transform: rotate3d(1,5,0,-25deg);
+    transform: rotate3d(1,5,0,-22deg);
+    overflow: hidden;
     background: linear-gradient(to right,#e9e8ea 85%,#f23269 75% );
     display: flex;
 
@@ -32,6 +33,7 @@ const InnerDrawerMenuContainer = styled.div`
     &:hover{
         animation: ${animation} 0.28s ease-in-out;
         animation-fill-mode:forwards;
+    // transform: rotate3d(0,0,0,0deg);
      }
 `;
 const InnerInformationContainer = styled.div`
@@ -52,8 +54,8 @@ const InnerMenuContainer = styled.div`
 const MenuOption = styled.div`
     background-color: ${props=>props.color};
     text-align: center;
-    height: 100%;
-    width: max-content;
+    height: 100%; 
+    width: calc(100% / 3);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -62,27 +64,20 @@ const MenuOption = styled.div`
     text-orientation: upright;
 `
 const DrawerMenu = function () {
-    const bitmojiElement = useRef(null);
-    // useEffect(()=>{
-    // addEventListener("scroll",()=>{
-    //     // bitmojiElement?.curr\ent.style = `margin:${window.scrollY}px 0 0 ${window.scrollY}px;`;
-    // })},);
-    // const drawerOptions = ['Education', 'Skills', 'Personal Projects'];
-    // const drawerOptions = ['Education', 'Skills', 'Personal Projects'];
     const drawerOptions = [
-        {type: "Education",color: '#234443'},
+        {type: "Education",color: '#f23269'},
         {type: "Skills",color: '#808080'},
-        {type: "Personal Projects",color: '#000'},
+        {type: "Personal Projects",color: '#f88f8f'},
     ];
     return <>
-        <OuterDrawerMenuContainer>
+        <OuterDrawerMenuContainer onMouseEnter={()=>{console.log('drawermenu loaded')}}>
             <InnerDrawerMenuContainer>
                 <InnerInformationContainer>
                     <Information mode='Education'/>
                 </InnerInformationContainer>
                 <InnerMenuContainer>
                     {drawerOptions.map((value:{ type: string; color: string; })=>{
-                        return <MenuOption color={value.color}>{value.type}</MenuOption>;}
+                        return <MenuOption color={value.color} >{value.type}</MenuOption>;}
                     )}
                 </InnerMenuContainer>
             </InnerDrawerMenuContainer>
