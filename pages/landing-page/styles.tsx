@@ -94,7 +94,7 @@ export const NameHeading = styled.h1`
     font-size:${h1Size};
     display:inline;
     -webkit-text-stroke:1.5px #fff;
-    mix-blend-mode: normal;
+    mix-blend-mode: color-dodge;
     position:relative;
     margin-right:35px;
     z-index: 1;
@@ -102,7 +102,7 @@ export const NameHeading = styled.h1`
   &: before {
     top: 0;
     left: 0;
-    background: inherit;
+    background: inherit1q 3;
     width: 0;
     height: 100%;
     color: #fff;

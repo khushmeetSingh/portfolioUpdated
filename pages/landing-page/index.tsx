@@ -12,7 +12,7 @@ const BannerMain = function () {
     return <>
         {/* <GlobalStyle /> */}
         <Banner>
-            <Bitmoji src={obj.imageUrl} height={"600px"} width={"auto"} />
+            {/* <Bitmoji src={obj.imageUrl} height={"600px"} width={"auto"} /> */}
             {/* <image */}
             <TextDiv>
                 <BannerText>Hello, I am</BannerText>

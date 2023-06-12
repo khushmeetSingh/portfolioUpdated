@@ -6,7 +6,7 @@ import TileDrawer from './landing-page/tile-drawer'
 export default function Home() {
   return (<>
   <GlobalStyle/>
-    {/* <BannerMain /> */}
+    <BannerMain />
     {/* <DrawerMenu /> */}
     <TileDrawer />
     </>

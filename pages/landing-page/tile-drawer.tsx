@@ -3,13 +3,18 @@ import styled, { keyframes } from 'styled-components';
 import Information from '@/components/information';
 import { visitLexicalEnvironment } from 'typescript';
 import Tile from '@/components/tile';
+import aboutMeBG from 'images/aboutMeBG2.jpg';
 
 const OuterDrawerMenuContainer = styled.div`
     width: 100%;
     height: 100vh;
     // text-align:center;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-evenly;
+    flex-direction: column;
+    background: url(${aboutMeBG.src});
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 0 200px;
     align-items: center;
 `;
@@ -20,6 +25,48 @@ const animation = keyframes`
     transform: rotate3d(0,0,0,45deg);
 }
 `;
+
+const HeadingDiv = styled.div`
+     text-align: center;
+     font-size: 72px;
+     display:block;
+    background: transparent;
+    text-decoration-line: underline;
+    color: white;
+    font-family: monaco;
+    padding-top: 50px;
+`;
+
+const TileDiv = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    padding-top: 120px;
+    flex-direction: row;
+`
+const TileDrawer = function () {
+    const drawerOptions = [
+        {type: "Education",color: '#f23269'},
+        {type: "Skills",color: '#808080'},
+        {type: "PersonalProjects",color: '#f88f8f'},
+    ];
+    return <>
+        <OuterDrawerMenuContainer onMouseEnter={()=>{console.log('drawermenu')}}>
+            <HeadingDiv onLoad={()=>console.log('onload loaded')}>About Me</HeadingDiv>
+            {/* <Tile mode='Education'/> */}
+            <TileDiv>
+            {drawerOptions.map((value:{ type: string;color: string; })=>{
+                        return <Tile mode={value.type} key={`${value.type}-key`}/>;}
+                    )}
+            </TileDiv>
+        </OuterDrawerMenuContainer>
+    </>
+}
+
+export default TileDrawer;
+
+
 const InnerDrawerMenuContainer = styled.div`
     &{
     width: 900px;
@@ -65,32 +112,4 @@ const MenuOption = styled.div`
     align-items: center;
     writing-mode: vertical-rl;
     text-orientation: upright;
-`
-const TileDrawer = function () {
-    const drawerOptions = [
-        {type: "Education",color: '#f23269'},
-        {type: "Skills",color: '#808080'},
-        {type: "PersonalProjects",color: '#f88f8f'},
-    ];
-    return <>
-        <OuterDrawerMenuContainer onMouseEnter={()=>{console.log('drawermenu loaded')}}>
-            {/* <InnerDrawerMenuContainer>
-                <InnerInformationContainer>
-                    <Information mode='Education'/>
-                </InnerInformationContainer>
-                <InnerMenuContainer>
-                    {drawerOptions.map((value:{ type: string; color: string; })=>{
-                        return <MenuOption color={value.color} key={`${value.type}-key`} >{value.type}</MenuOption>;}
-                    )}
-                </InnerMenuContainer>
-            </InnerDrawerMenuContainer> */}
-
-            {/* <Tile mode='Education'/> */}
-            {drawerOptions.map((value:{ type: string;color: string; })=>{
-                        return <Tile mode={value.type} key={`${value.type}-key`}/>;}
-                    )}
-        </OuterDrawerMenuContainer>
-    </>
-}
-
-export default TileDrawer;
+`;
